@@ -42,6 +42,11 @@ def targetJavaVersion = 17
 tasks.withType(JavaCompile).configureEach {
     it.options.encoding = "UTF-8"
 }
+
+compileKotlin {
+    kotlinOptions.jvmTarget = targetJavaVersion.toString()
+}
+
 java {
     def javaVersion = JavaVersion.toVersion(targetJavaVersion)
     sourceCompatibility = javaVersion
@@ -53,9 +58,6 @@ java {
     withSourcesJar()
 }
 
-compileKotlin {
-    kotlinOptions.jvmTarget = targetJavaVersion.toString()
-}
 
 jar {
     from("LICENSE") {
@@ -71,15 +73,5 @@ publishing {
     }*/
 
     repositories {
-    }
-}
-compileKotlin {
-    kotlinOptions {
-        jvmTarget = "1.8"
-    }
-}
-compileTestKotlin {
-    kotlinOptions {
-        jvmTarget = "1.8"
     }
 }

@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "id": "carpet-enhanced-dispensers",
+  "version": "${version}",
+  "name": "carpet-enhanced-dispensers",
+  "description": "A carpet extension designed to add new features to dispensers via enchantments and smithing",
+  "authors": [
+    "EmiliaThorsen",
+    "FubyCutie"
+  ],
+  "contact": {
+    "website": "https://github.com/SkyeEmmyMods"
+  },
+  "license": "GPL-3.0",
+  "icon": "assets/carpet-enhanced-dispensers/icon.png",
+  "environment": "server",
+  "mixins": [
+    "carpet-enhanced-dispensers.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}

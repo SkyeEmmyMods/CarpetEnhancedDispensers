@@ -8,6 +8,9 @@ import utils.UtilsKt;
 import java.util.Map;
 
 public class Main implements ModInitializer, CarpetExtension {
+
+	public static final String ENHANCED_DISPENSER = "enhanced-dispenser";
+
 	@Override
 	public void onInitialize() {
 		CarpetServer.manageExtension(this);

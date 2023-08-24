@@ -5,12 +5,11 @@ import carpet.api.settings.RuleCategory;
 
 public class Options {
 
-	/* Example Rule
+	/* Rule Example
 	@Rule(
-			categories = { RuleCategory.EXPERIMENTAL }
+			categories = { RuleCategory.DISPENSER, Main.ENHANCED_DISPENSER }
 	)
 	public static boolean exampleRule = false;
-	 */
-
+	*/
 
 }

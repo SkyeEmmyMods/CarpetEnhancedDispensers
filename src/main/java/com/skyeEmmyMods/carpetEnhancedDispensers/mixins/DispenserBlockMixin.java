@@ -30,16 +30,4 @@ public abstract class DispenserBlockMixin extends DispenserBlock {
 			}
 		}
 	}
-
-	@Override
-	public void onBreak(World world, BlockPos pos, BlockState state, PlayerEntity player) {
-		BlockEntity blockEntity = world.getBlockEntity(pos);
-		if (blockEntity instanceof DispenserBlockEntity) {
-			((DispenserBlockCommuncation) blockEntity).getEnchantments()
-
-		}
-
-
-		super.onBreak(world, pos, state, player);
-	}
 }

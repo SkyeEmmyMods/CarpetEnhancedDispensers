@@ -22,12 +22,11 @@ public abstract class DispenserBlockEntityMixin extends LootableContainerBlockEn
 
 	private NbtList enchantments = new NbtList();
 
-	@Override
+
 	public NbtList getEnchantments() {
 		return enchantments;
 	}
 
-	@Override
 	public void setEnchantments(NbtList enchantments) {
 		this.enchantments = enchantments;
 	}

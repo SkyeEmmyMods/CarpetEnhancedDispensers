@@ -2,6 +2,7 @@ package com.skyeEmmyMods.carpetEnhancedDispensers;
 
 import carpet.CarpetExtension;
 import carpet.CarpetServer;
+import com.skyeEmmyMods.carpetEnhancedDispensers.utils.LootTableHandling;
 import net.fabricmc.api.ModInitializer;
 import utils.UtilsKt;
 
@@ -29,5 +30,6 @@ public class Main implements ModInitializer, CarpetExtension {
 	@Override
 	public void onGameStarted() {
 		CarpetServer.settingsManager.parseSettingsClass(Options.class);
+		LootTableHandling.registerDispenserCopyEnchants();
 	}
 }

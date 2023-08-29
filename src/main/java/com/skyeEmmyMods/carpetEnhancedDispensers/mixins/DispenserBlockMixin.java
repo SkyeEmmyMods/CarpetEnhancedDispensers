@@ -24,8 +24,9 @@ public abstract class DispenserBlockMixin extends BlockWithEntity {
 	public void onPlaced(World world, BlockPos pos, BlockState state, LivingEntity placer, ItemStack itemStack, CallbackInfo ci) {
 		if (itemStack.hasEnchantments()) {
 			BlockEntity blockEntity = world.getBlockEntity(pos);
-			if (blockEntity instanceof DispenserBlockEntity) {
-				((DispenserBlockCommuncation) blockEntity).setEnchantments(itemStack.getEnchantments());
+			if (blockEntity instanceof DispenserBlockCommuncation dispenser) {
+				dispenser.setEnchantments(itemStack.getEnchantments());
+				dispenser.setRepairCost(itemStack.getRepairCost());
 			}
 		}
 	}

@@ -10,6 +10,7 @@ import net.minecraft.nbt.NbtCompound;
 import net.minecraft.nbt.NbtList;
 import net.minecraft.util.math.BlockPos;
 import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
@@ -22,6 +23,9 @@ public abstract class DispenserBlockEntityMixin extends LootableContainerBlockEn
 	}
 
 	private NbtList enchantments = new NbtList();
+	
+	@Unique
+	private int repairCost = 0;
 
 	public DispenserBehaviorManager getDispenserBehaviorManager() {
 		return new DispenserBehaviorManager(enchantments);
@@ -30,20 +34,29 @@ public abstract class DispenserBlockEntityMixin extends LootableContainerBlockEn
 	public NbtList getEnchantments() {
 		return enchantments;
 	}
-
+	
 	public void setEnchantments(NbtList enchantments) {
 		this.enchantments = enchantments;
 	}
-
+	
+	public int getRepairCost() {
+		return repairCost;
+	}
+	
+	public void setRepairCost(int repairCost) {
+		this.repairCost = repairCost;
+	}
+	
 	@Inject(method = "writeNbt", at = @At("HEAD"))
 	public void writeNbtInject(NbtCompound nbt, CallbackInfo ci) {
 		nbt.put("Enchantments", enchantments);
+		nbt.putInt("RepairCost", repairCost);
 	}
-
+	
 	@Inject(method = "readNbt", at = @At("TAIL"))
 	public void readNbtInject(NbtCompound nbt, CallbackInfo ci) {
 		enchantments = (NbtList) nbt.get("Enchantments");
+		repairCost = nbt.getInt("RepairCost");
 	}
-
-
+	
 }

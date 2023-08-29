@@ -7,6 +7,10 @@ public interface DispenserBlockCommuncation {
 	NbtList getEnchantments();
 
 	void setEnchantments(NbtList enchantments);
+	
+	int getRepairCost();
+	
+	void setRepairCost(int cost);
 
 	DispenserBehaviorManager getDispenserBehaviorManager();
 

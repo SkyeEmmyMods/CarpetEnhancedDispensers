@@ -1,8 +1,7 @@
 package com.skyeEmmyMods.carpetEnhancedDispensers.mixins;
 
 import com.skyeEmmyMods.carpetEnhancedDispensers.DispenserBlockCommuncation;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.DispenserBlock;
+import net.minecraft.block.*;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.block.entity.DispenserBlockEntity;
 import net.minecraft.entity.LivingEntity;
@@ -15,7 +14,11 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(DispenserBlock.class)
-public abstract class DispenserBlockMixin {
+public abstract class DispenserBlockMixin extends BlockWithEntity {
+
+	protected DispenserBlockMixin(Settings settings) {
+		super(settings);
+	}
 
 	@Inject(method = "onPlaced", at = @At("HEAD"))
 	public void onPlaced(World world, BlockPos pos, BlockState state, LivingEntity placer, ItemStack itemStack, CallbackInfo ci) {
@@ -26,4 +29,5 @@ public abstract class DispenserBlockMixin {
 			}
 		}
 	}
+
 }

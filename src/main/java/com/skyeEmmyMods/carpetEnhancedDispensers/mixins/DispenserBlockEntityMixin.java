@@ -1,5 +1,6 @@
 package com.skyeEmmyMods.carpetEnhancedDispensers.mixins;
 
+import com.skyeEmmyMods.carpetEnhancedDispensers.DispenserBehaviorManager;
 import com.skyeEmmyMods.carpetEnhancedDispensers.DispenserBlockCommuncation;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.entity.BlockEntityType;
@@ -22,6 +23,9 @@ public abstract class DispenserBlockEntityMixin extends LootableContainerBlockEn
 
 	private NbtList enchantments = new NbtList();
 
+	public DispenserBehaviorManager getDispenserBehaviorManager() {
+		return new DispenserBehaviorManager(enchantments);
+	}
 
 	public NbtList getEnchantments() {
 		return enchantments;

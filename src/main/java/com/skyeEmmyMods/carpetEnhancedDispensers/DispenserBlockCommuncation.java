@@ -8,4 +8,6 @@ public interface DispenserBlockCommuncation {
 
 	void setEnchantments(NbtList enchantments);
 
+	DispenserBehaviorManager getDispenserBehaviorManager();
+
 }

@@ -6,7 +6,7 @@ import java.io.IOException
 
 fun getTranslationFromResourcePath(lang: String?, classLoader: ClassLoader): MutableMap<String, String> {
     lang ?: return mutableMapOf()
-    val langFile = classLoader.getResource("assets/skye-carpet-addons/lang/$lang.json")
+    val langFile = classLoader.getResource("assets/carpet-enhanced-dispensers/lang/$lang.json")
     langFile ?: return mutableMapOf()
     val jsonData: String = try {
         langFile.readText()

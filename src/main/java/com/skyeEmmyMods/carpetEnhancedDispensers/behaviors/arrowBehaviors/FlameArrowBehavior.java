@@ -1,5 +1,6 @@
 package com.skyeEmmyMods.carpetEnhancedDispensers.behaviors.arrowBehaviors;
 
+import com.skyeEmmyMods.carpetEnhancedDispensers.Options;
 import com.skyeEmmyMods.carpetEnhancedDispensers.behaviors.ArrowBehavior;
 import com.skyeEmmyMods.carpetEnhancedDispensers.behaviors.GenericBehavior;
 import net.minecraft.enchantment.Enchantment;
@@ -14,7 +15,7 @@ public class FlameArrowBehavior extends GenericBehavior implements ArrowBehavior
 
 	@Override
 	public boolean isEnabled() {
-		return true; //TODO: add carpet rule thingy here
+		return Options.flameArrowDispenser;
 	}
 
 	public void applyBehavior(ProjectileEntity arrow) {

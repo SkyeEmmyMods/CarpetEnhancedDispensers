@@ -9,5 +9,18 @@ public class Options {
 	)
 	public static boolean flameArrowDispenser = false;
 
+	@Rule(
+			categories = { RuleCategory.DISPENSER, Main.ENHANCED_DISPENSER }
+	)
+	public static boolean powerArrowDispenser = false;
+
+	@Rule(
+			categories = { RuleCategory.DISPENSER, Main.ENHANCED_DISPENSER }
+	)
+	public static boolean punchArrowDispenser = false;
+	@Rule(
+			categories = { RuleCategory.DISPENSER, Main.ENHANCED_DISPENSER }
+	)
+	public static boolean infinityArrowDispenser = false;
 
 }

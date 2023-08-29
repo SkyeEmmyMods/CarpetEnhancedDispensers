@@ -8,18 +8,22 @@ import net.minecraft.enchantment.Enchantments;
 import net.minecraft.entity.projectile.ProjectileEntity;
 import net.minecraft.item.ItemStack;
 
-public class FlameArrowBehavior extends GenericBehavior implements ArrowBehavior {
+public class InfinityArrowBehavior extends GenericBehavior implements ArrowBehavior {
+
 	@Override
 	public Enchantment getEnchant() {
-		return Enchantments.FLAME;
+		return Enchantments.INFINITY;
 	}
 
 	@Override
 	public boolean isEnabled() {
-		return Options.flameArrowDispenser;
+		return Options.infinityArrowDispenser;
 	}
 
 	public void applyBehavior(ProjectileEntity arrow, ItemStack itemStack) {
-		arrow.setOnFireFor(100);
+		itemStack.increment(1);
 	}
 }
+
+
+

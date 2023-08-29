@@ -5,21 +5,23 @@ import com.skyeEmmyMods.carpetEnhancedDispensers.behaviors.ArrowBehavior;
 import com.skyeEmmyMods.carpetEnhancedDispensers.behaviors.GenericBehavior;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.Enchantments;
+import net.minecraft.entity.projectile.PersistentProjectileEntity;
 import net.minecraft.entity.projectile.ProjectileEntity;
 import net.minecraft.item.ItemStack;
 
-public class FlameArrowBehavior extends GenericBehavior implements ArrowBehavior {
+public class PunchArrowBehavior extends GenericBehavior implements ArrowBehavior {
+
 	@Override
 	public Enchantment getEnchant() {
-		return Enchantments.FLAME;
+		return Enchantments.PUNCH;
 	}
 
 	@Override
 	public boolean isEnabled() {
-		return Options.flameArrowDispenser;
+		return Options.punchArrowDispenser;
 	}
 
 	public void applyBehavior(ProjectileEntity arrow, ItemStack itemStack) {
-		arrow.setOnFireFor(100);
+		((PersistentProjectileEntity) arrow).setPunch(level);
 	}
 }

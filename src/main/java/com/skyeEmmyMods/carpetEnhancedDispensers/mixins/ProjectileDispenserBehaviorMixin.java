@@ -49,7 +49,7 @@ public class ProjectileDispenserBehaviorMixin {
 		projectileEntity.setVelocity(direction.getOffsetX(), (float)direction.getOffsetY() + 0.1F, direction.getOffsetZ(), this.getForce(), this.getVariation());
 
 		List<GenericBehavior> behaviors = ((DispenserBlockCommuncation) Objects.requireNonNull(world.getBlockEntity(pointer.getPos()))).getDispenserBehaviorManager().getApplicableBehaviors(stack);
-		behaviors.forEach(behavior -> ((ArrowBehavior)behavior).applyBehavior(projectileEntity));
+		behaviors.forEach(behavior -> ((ArrowBehavior)behavior).applyBehavior(projectileEntity, stack));
 
 		world.spawnEntity(projectileEntity);
 		stack.decrement(1);

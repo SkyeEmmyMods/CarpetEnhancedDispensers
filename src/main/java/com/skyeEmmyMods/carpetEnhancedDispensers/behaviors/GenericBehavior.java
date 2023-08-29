@@ -4,7 +4,7 @@ import net.minecraft.enchantment.Enchantment;
 
 public class GenericBehavior {
 
-	private int level;
+	protected int level;
 
 	public Enchantment getEnchant() {
 		return null;

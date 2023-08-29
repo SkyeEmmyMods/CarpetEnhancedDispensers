@@ -26,7 +26,10 @@ public class CopyEnchantmentLootFunction extends ConditionalLootFunction {
 			NbtList enchantmentNbt = dispenser.getEnchantments();
 			var enchantments = EnchantmentHelper.fromNbt(enchantmentNbt);
 			enchantments.forEach(stack::addEnchantment);
-			stack.setRepairCost(dispenser.getRepairCost());
+			int repairCost;
+			if ((repairCost = dispenser.getRepairCost()) != 0) {
+				stack.setRepairCost(repairCost);
+			}
 		}
 		return stack;
 	}

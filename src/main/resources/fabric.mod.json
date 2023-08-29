@@ -2,6 +2,11 @@
   "schemaVersion": 1,
   "id": "carpet-enhanced-dispensers",
   "version": "${version}",
+  "entrypoints": {
+    "main": [
+      "com.skyeEmmyMods.carpetEnhancedDispensers.Main"
+    ]
+  },
   "name": "carpet-enhanced-dispensers",
   "description": "A carpet extension designed to add new features to dispensers via enchantments and smithing",
   "authors": [
@@ -13,7 +18,7 @@
   },
   "license": "GPL-3.0",
   "icon": "assets/carpet-enhanced-dispensers/icon.png",
-  "environment": "server",
+  "environment": "*",
   "mixins": [
     "carpet-enhanced-dispensers.mixins.json"
   ],

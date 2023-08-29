@@ -1,0 +1,6 @@
+{
+  "carpet.rule.flameArrowDispenser.desc": "Allows dispensers enchanted with flame to shoot flaming arrows",
+  "carpet.rule.powerArrowDispenser.desc": "Allows dispensers enchanted with power to shoot more powerful arrows",
+  "carpet.rule.punchArrowDispenser.desc": "Allows dispensers enchanted with punch to shoot arrows with more knockback",
+  "carpet.rule.infinityArrowDispenser.desc": "Allows dispensers enchanted with infinity to not consume arrows on fire"
+}

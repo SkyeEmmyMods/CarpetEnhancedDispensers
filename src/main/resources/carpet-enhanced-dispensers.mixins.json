@@ -6,6 +6,7 @@
   "mixins": [
     "DispenserBlockEntityMixin",
     "DispenserBlockMixin",
+    "EnchantmentMixin",
     "ProjectileDispenserBehaviorMixin"
   ],
   "injectors": {

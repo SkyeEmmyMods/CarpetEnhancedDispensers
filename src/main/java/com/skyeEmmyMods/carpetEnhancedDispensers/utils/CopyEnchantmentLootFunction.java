@@ -3,7 +3,7 @@ package com.skyeEmmyMods.carpetEnhancedDispensers.utils;
 import com.google.gson.JsonDeserializationContext;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonSerializationContext;
-import com.skyeEmmyMods.carpetEnhancedDispensers.DispenserBlockCommuncation;
+import com.skyeEmmyMods.carpetEnhancedDispensers.DispenserBlockDuckInterface;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.item.ItemStack;
 import net.minecraft.loot.condition.LootCondition;
@@ -22,7 +22,7 @@ public class CopyEnchantmentLootFunction extends ConditionalLootFunction {
 	@Override
 	protected ItemStack process(ItemStack stack, LootContext context) {
 		Object object = context.get(LootContextParameters.BLOCK_ENTITY);
-		if (object instanceof DispenserBlockCommuncation dispenser) {
+		if (object instanceof DispenserBlockDuckInterface dispenser) {
 			NbtList enchantmentNbt = dispenser.getEnchantments();
 			var enchantments = EnchantmentHelper.fromNbt(enchantmentNbt);
 			enchantments.forEach(stack::addEnchantment);

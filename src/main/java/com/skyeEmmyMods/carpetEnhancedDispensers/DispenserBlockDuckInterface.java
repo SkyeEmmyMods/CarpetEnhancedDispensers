@@ -2,7 +2,7 @@ package com.skyeEmmyMods.carpetEnhancedDispensers;
 
 import net.minecraft.nbt.NbtList;
 
-public interface DispenserBlockCommuncation {
+public interface DispenserBlockDuckInterface {
 
 	NbtList getEnchantments();
 

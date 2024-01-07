@@ -1,6 +1,6 @@
 package com.skyeEmmyMods.carpetEnhancedDispensers.mixins;
 
-import com.skyeEmmyMods.carpetEnhancedDispensers.DispenserBlockCommuncation;
+import com.skyeEmmyMods.carpetEnhancedDispensers.DispenserBlockDuckInterface;
 import com.skyeEmmyMods.carpetEnhancedDispensers.behaviors.ArrowBehavior;
 import com.skyeEmmyMods.carpetEnhancedDispensers.behaviors.GenericBehavior;
 import net.minecraft.block.DispenserBlock;
@@ -48,7 +48,7 @@ public class ProjectileDispenserBehaviorMixin {
 		ProjectileEntity projectileEntity = this.createProjectile(world, position, stack);
 		projectileEntity.setVelocity(direction.getOffsetX(), (float)direction.getOffsetY() + 0.1F, direction.getOffsetZ(), this.getForce(), this.getVariation());
 
-		List<GenericBehavior> behaviors = ((DispenserBlockCommuncation) Objects.requireNonNull(world.getBlockEntity(pointer.getPos()))).getDispenserBehaviorManager().getApplicableBehaviors(stack);
+		List<GenericBehavior> behaviors = ((DispenserBlockDuckInterface) Objects.requireNonNull(world.getBlockEntity(pointer.getPos()))).getDispenserBehaviorManager().getApplicableBehaviors(stack);
 		behaviors.forEach(behavior -> ((ArrowBehavior)behavior).applyBehavior(projectileEntity, stack));
 
 		world.spawnEntity(projectileEntity);

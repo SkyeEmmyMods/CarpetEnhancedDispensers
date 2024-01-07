@@ -22,5 +22,17 @@ public class Options {
 			categories = { RuleCategory.DISPENSER, Main.ENHANCED_DISPENSER }
 	)
 	public static boolean infinityArrowDispenser = false;
+	@Rule(
+			categories = { RuleCategory.DISPENSER, Main.ENHANCED_DISPENSER }
+	)
+	public static boolean silkTouchTntDispenser = false;
+	@Rule(
+			categories = { RuleCategory.DISPENSER, Main.ENHANCED_DISPENSER }
+	)
+	public static boolean fortuneTntDispenser = false;
+	@Rule(
+			categories = { RuleCategory.DISPENSER, Main.ENHANCED_DISPENSER }
+	)
+	public static boolean lootingTntDispenser = false;
 
 }

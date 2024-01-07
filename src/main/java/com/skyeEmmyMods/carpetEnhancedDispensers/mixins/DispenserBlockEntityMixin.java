@@ -1,7 +1,7 @@
 package com.skyeEmmyMods.carpetEnhancedDispensers.mixins;
 
 import com.skyeEmmyMods.carpetEnhancedDispensers.DispenserBehaviorManager;
-import com.skyeEmmyMods.carpetEnhancedDispensers.DispenserBlockCommuncation;
+import com.skyeEmmyMods.carpetEnhancedDispensers.DispenserBlockDuckInterface;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.block.entity.DispenserBlockEntity;
@@ -16,7 +16,7 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(DispenserBlockEntity.class)
-public abstract class DispenserBlockEntityMixin extends LootableContainerBlockEntity implements DispenserBlockCommuncation {
+public abstract class DispenserBlockEntityMixin extends LootableContainerBlockEntity implements DispenserBlockDuckInterface {
 
 	protected DispenserBlockEntityMixin(BlockEntityType<?> blockEntityType, BlockPos blockPos, BlockState blockState) {
 		super(blockEntityType, blockPos, blockState);

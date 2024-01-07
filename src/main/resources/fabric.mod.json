@@ -7,6 +7,7 @@
       "com.skyeEmmyMods.carpetEnhancedDispensers.Main"
     ]
   },
+  "accessWidener" : "carpet-enhanced-dispensers.accesswidener",
   "name": "carpet-enhanced-dispensers",
   "description": "A carpet extension designed to add new features to dispensers via enchantments and smithing",
   "authors": [

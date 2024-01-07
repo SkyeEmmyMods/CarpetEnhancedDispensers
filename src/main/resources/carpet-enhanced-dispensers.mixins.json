@@ -6,6 +6,8 @@
   "mixins": [
     "DispenserBlockEntityMixin",
     "DispenserBlockMixin",
+    "EnchantmentMixin",
+    "ProjectileDispenserBehaviorMixin",
     "ExplosionMixin",
     "LivingEntityMixin",
     "LootingEnchantLootFunctionMixin",

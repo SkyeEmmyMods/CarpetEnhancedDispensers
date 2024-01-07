@@ -7,6 +7,10 @@ plugins {
 version = project.mod_version
 group = project.maven_group
 
+loom {
+    accessWidenerPath = file("src/main/resources/carpet-enhanced-dispensers.accesswidener")
+}
+
 repositories {
     maven {
         url 'https://masa.dy.fi/maven'

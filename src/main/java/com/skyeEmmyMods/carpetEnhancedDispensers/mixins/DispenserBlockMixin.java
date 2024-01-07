@@ -1,9 +1,8 @@
 package com.skyeEmmyMods.carpetEnhancedDispensers.mixins;
 
-import com.skyeEmmyMods.carpetEnhancedDispensers.DispenserBlockCommuncation;
+import com.skyeEmmyMods.carpetEnhancedDispensers.DispenserBlockDuckInterface;
 import net.minecraft.block.*;
 import net.minecraft.block.entity.BlockEntity;
-import net.minecraft.block.entity.DispenserBlockEntity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.math.BlockPos;
@@ -24,7 +23,7 @@ public abstract class DispenserBlockMixin extends BlockWithEntity {
 	public void onPlaced(World world, BlockPos pos, BlockState state, LivingEntity placer, ItemStack itemStack, CallbackInfo ci) {
 		if (itemStack.hasEnchantments()) {
 			BlockEntity blockEntity = world.getBlockEntity(pos);
-			if (blockEntity instanceof DispenserBlockCommuncation dispenser) {
+			if (blockEntity instanceof DispenserBlockDuckInterface dispenser) {
 				dispenser.setEnchantments(itemStack.getEnchantments());
 				dispenser.setRepairCost(itemStack.getRepairCost());
 			}

@@ -6,7 +6,12 @@
   "mixins": [
     "DispenserBlockEntityMixin",
     "DispenserBlockMixin",
-    "ProjectileDispenserBehaviorMixin"
+    "ExplosionMixin",
+    "LivingEntityMixin",
+    "LootingEnchantLootFunctionMixin",
+    "ProjectileDispenserBehaviorMixin",
+    "RandomChanceWithLootingLootConditionMixin",
+    "TntEntityMixin"
   ],
   "injectors": {
     "defaultRequire": 1

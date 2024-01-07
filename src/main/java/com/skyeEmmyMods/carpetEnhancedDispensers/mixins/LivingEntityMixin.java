@@ -30,15 +30,9 @@ public abstract class LivingEntityMixin extends Entity {
 
     @Redirect(method = "dropLoot", at = @At(value = "INVOKE", target = "Lnet/minecraft/loot/context/LootContext$Builder;build(Lnet/minecraft/loot/context/LootContextType;)Lnet/minecraft/loot/context/LootContext;"))
     public LootContext addEnchantmentsToContext(LootContext.Builder builder, LootContextType type, DamageSource source) {
-        if (source.getSource() instanceof TntEntityDuckInterface tnt) {
+        if (source.getSource() instanceof TntEntityDuckInterface tnt && !tnt.getEnchantmentNBT().isEmpty()) {
             Map<Enchantment, Integer> enchantments = EnchantmentHelper.fromNbt(tnt.getEnchantmentNBT());
-            Map<Enchantment, Integer> enabledEnchantments = new HashMap<>();
-            if (enchantments.containsKey(Enchantments.LOOTING) && Options.lootingTntDispenser) {
-                enabledEnchantments.put(Enchantments.LOOTING, enchantments.get(Enchantments.LOOTING));
-            }
-            if (!enabledEnchantments.isEmpty()) {
-                builder.parameter(Main.enchantmentParameter, enabledEnchantments);
-            }
+            builder.parameter(Main.enchantmentParameter, enchantments);
         }
         return builder.build(Main.modifiedEntityLootContextType);
     }

@@ -24,7 +24,6 @@ public abstract class EnchantmentMixin {
 		for (List<GenericBehavior> behaviors : behaviorMap.values()) {
 			for (GenericBehavior behavior : behaviors) {
 				if (behavior.getEnchant().equals(this) && behavior.isEnabled()) {
-					System.out.println(behavior.getEnchant());
 					cir.setReturnValue(true);
 				}
 			}

@@ -19,7 +19,6 @@ public abstract class EnchantmentMixin {
 	
 	@Inject(method = "isAcceptableItem", at = @At("HEAD"), cancellable = true)
 	public void isAcceptableItem(ItemStack stack, CallbackInfoReturnable<Boolean> cir) {
-		System.out.println(this);
 		Map<Item, List<GenericBehavior>> behaviorMap = Behaviors.behaviorMap;
 		for (List<GenericBehavior> behaviors : behaviorMap.values()) {
 			for (GenericBehavior behavior : behaviors) {

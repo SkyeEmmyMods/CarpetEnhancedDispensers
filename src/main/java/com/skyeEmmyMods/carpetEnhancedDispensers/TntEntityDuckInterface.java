@@ -1,10 +1,11 @@
 package com.skyeEmmyMods.carpetEnhancedDispensers;
 
+import net.minecraft.enchantment.Enchantment;
 import net.minecraft.nbt.NbtList;
 
 public interface TntEntityDuckInterface {
 
-    void setEnchantmentNBT(NbtList enchantmentNBT);
+    void addEnchantment(Enchantment enchantment, int level);
 
     NbtList getEnchantmentNBT();
 }

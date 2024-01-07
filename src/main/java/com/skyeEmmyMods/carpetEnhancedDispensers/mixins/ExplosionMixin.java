@@ -40,13 +40,7 @@ public abstract class ExplosionMixin {
             ItemStack item = new ItemStack(Items.TNT);
             if(entity instanceof TntEntityDuckInterface tnt) {
                 Map<Enchantment, Integer> enchantments = EnchantmentHelper.fromNbt(tnt.getEnchantmentNBT());
-                if(Options.silkTouchTntDispenser && enchantments.containsKey(Enchantments.SILK_TOUCH)) {
-                    item.addEnchantment(Enchantments.SILK_TOUCH, 1);
-                }
-                if(Options.fortuneTntDispenser && enchantments.containsKey(Enchantments.FORTUNE)) {
-                    item.addEnchantment(Enchantments.FORTUNE, enchantments.get(Enchantments.FORTUNE));
-                }
-
+                EnchantmentHelper.set(enchantments, item);
             }
             return (T) item;
         }

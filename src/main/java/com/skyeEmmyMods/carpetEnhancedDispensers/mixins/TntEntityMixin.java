@@ -1,6 +1,8 @@
 package com.skyeEmmyMods.carpetEnhancedDispensers.mixins;
 
 import com.skyeEmmyMods.carpetEnhancedDispensers.TntEntityDuckInterface;
+import net.minecraft.enchantment.Enchantment;
+import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.TntEntity;
@@ -23,8 +25,8 @@ public abstract class TntEntityMixin extends Entity implements TntEntityDuckInte
     }
 
     @Override
-    public void setEnchantmentNBT(NbtList enchantmentNBT) {
-        enchantments = enchantmentNBT;
+    public void addEnchantment(Enchantment enchantment, int level) {
+        enchantments.add(EnchantmentHelper.createNbt(EnchantmentHelper.getEnchantmentId(enchantment), level));
     }
 
     @Override
